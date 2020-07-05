@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <!-- Page Header -->
+  {% set f_name = url_for('static', filename='img/home-bg.jpg') %}
+  <header class="masthead" style="background-image: url({{f_name}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Manage Posts</h1>
+            <span class="subheading">Add New or Edit Current Posts here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+v
+  <!-- Main Content -->
+  <div class="container">
+    <form name="EditPost" id="PostsForm" action="/edit/{{sno}}" method="post" novalidate>
+      <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+          <label>Title</label>
+          <input type="text" class="form-control" placeholder="Blog Title" id="title" name="title"
+                 value="{{post.title}}" required data-validation-required-message="Please enter blog title.">
+          <p class="help-block text-danger"></p>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+          <label>Subtitle</label>
+          <input type="text" class="form-control" placeholder="Sub-title" id="subtitle" name="subtitle"
+                 value="{{post.subtitle}}" required data-validation-required-message="Please enter subtitle here.">
+          <p class="help-block text-danger"></p>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+          <label>Slug</label>
+          <input type="text" class="form-control" placeholder="Slug" id="slug" name="slug"
+                 value="{{post.slug}}" required data-validation-required-message="Please enter URL slug.">
+          <p class="help-block text-danger"></p>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+          <label>Content</label>
+          <textarea rows="5" class="form-control" placeholder="Content" id="content" name="content"
+                    required data-validation-required-message="Please enter blog content.">{{post.content}}</textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+      </div>
+      <br>
+      <div id="success"></div>
+      <button type="submit" class="btn btn-primary" id="sendPostButton">Submit</button>
+    </form>
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/personalblog",
+    "prod_uri": "mysql://root:@localhost/personalblog",
+    "fb_url": "https://www.facebook.com/",
+    "gh_url": "https://github.com/",
+    "tw_url": "https://twitter.com/explore",
+    "blog_name": "Blogging Site",
+    "tag_line": "Think twice, Code once",
+    "home_posts": 2,
+    "about_text": "About us Text. A Blogging Site made using Bootstrap Clean Blog template and Python Flask Framework ",
+    "gmail_user": "email@gmail.com",
+    "gmail_pw": "gmail_password",
+    "admin_user": "admin",
+    "admin_password": "admin"
+  }
+}
