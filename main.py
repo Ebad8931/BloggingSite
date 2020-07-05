@@ -157,6 +157,12 @@ def edit(sno):
             return render_template('edit.html', params=params, post=post, sno=sno)
 
 
+@app.route('/logout')
+def logout():
+    session.pop('user')
+    return redirect('/login')
+
+
 @app.route('/delete/<string:sno>')
 def delete(sno):
     if 'user' in session and session['user'] == params['admin_user']:
